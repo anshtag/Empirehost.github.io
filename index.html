@@ -65,30 +65,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Minecraft Server - 1.20 to 1.21.4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div class="container">
         <h1>Create Your Minecraft Server</h1>
+        
+        <!-- Server creation form -->
         <form id="createServerForm">
             <label for="server-name">Server Name:</label>
             <input type="text" id="server-name" name="server-name" required>
 
             <label for="minecraft-version">Minecraft Version:</label>
             <select id="minecraft-version" name="minecraft-version">
-                <option value="1.16">1.16</option>
-                <option value="1.17">1.17</option>
-                <option value="1.18">1.18</option>
+                <!-- Versions will be dynamically populated -->
             </select>
 
             <label for="server-type">Server Type:</label>
             <select id="server-type" name="server-type">
                 <option value="vanilla">Vanilla</option>
                 <option value="spigot">Spigot</option>
+                <option value="paper">Paper</option>
                 <option value="forge">Forge</option>
+                <option value="curseforge">CurseForge</option>
             </select>
 
             <button type="submit">Create Server</button>
         </form>
+
+        <!-- Server management section -->
+        <div id="server-management" style="display:none;">
+            <h2>Manage Server</h2>
+            <div id="file-management">
+                <button id="viewWorldBtn">View World Files</button>
+                <button id="viewPluginBtn">View Plugins</button>
+                <button id="viewConfigBtn">View Config</button>
+            </div>
+            
+            <div id="console">
+                <h3>Server Console</h3>
+                <textarea id="consoleOutput" rows="10" readonly></textarea>
+                <input type="text" id="consoleInput" placeholder="Enter command..." />
+                <button id="sendCommandBtn">Send Command</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html>
+        </html>
