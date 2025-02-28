@@ -56,3 +56,39 @@
     </script>
 </body>
                                                       </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Minecraft Server - Aternos-like Theme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Minecraft Server</h1>
+        <form id="createServerForm">
+            <label for="server-name">Server Name:</label>
+            <input type="text" id="server-name" name="server-name" required>
+
+            <label for="minecraft-version">Minecraft Version:</label>
+            <select id="minecraft-version" name="minecraft-version">
+                <option value="1.16">1.16</option>
+                <option value="1.17">1.17</option>
+                <option value="1.18">1.18</option>
+            </select>
+
+            <label for="server-type">Server Type:</label>
+            <select id="server-type" name="server-type">
+                <option value="vanilla">Vanilla</option>
+                <option value="spigot">Spigot</option>
+                <option value="forge">Forge</option>
+            </select>
+
+            <button type="submit">Create Server</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
