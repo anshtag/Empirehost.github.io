@@ -178,3 +178,59 @@ document.addEventListener("DOMContentLoaded", () => {
         serverList.appendChild(serverDiv);
     });
 });
+// Firebase Configuration (Replace with your own)
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+// Login Function
+function login() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            document.getElementById("message").innerText = "Login successful!";
+            window.location.href = "dashboard.html"; // Redirect to dashboard
+        })
+        .catch((error) => {
+            document.getElementById("message").innerText = error.message;
+        });
+}
+
+// Register Function
+function register() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            document.getElementById("message").innerText = "Registration successful!";
+        })
+        .catch((error) => {
+            document.getElementById("message").innerText = error.message;
+        });
+}
+
+// Google Login
+function googleLogin() {
+    let provider = new firebase.auth.GoogleAuthProvider();
+
+    auth.signInWithPopup(provider)
+        .then((result) => {
+            document.getElementById("message").innerText = "Google Login successful!";
+            window.location.href = "dashboard.html"; // Redirect to dashboard
+        })
+        .catch((error) => {
+            document.getElementById("message").innerText = error.message;
+        });
+}
