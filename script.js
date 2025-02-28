@@ -180,12 +180,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Firebase Configuration (Replace with your own)
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+             apiKey: "
+AIzaSyAvvYwCpNnx8yGPfv-axZa0DJ9E4pVCpnM",
+            authDomain: "empire-host-74181.firebasestorage.app",
+            projectId: "empire-host-74181",
+            storageBucket: ""empire-host-74181.firebasestorage.app",
+            messagingSenderId: "227816617588",
+            appId: "1:227816617588:web:3fa5837c6d84bef8eb4321"
 };
 
 // Initialize Firebase
