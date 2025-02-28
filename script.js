@@ -152,3 +152,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const serverName = document.getElementById('server-name');
+    const serverStatus = document.getElementById('server-status');
+    const serverVersion = document.getElementById('server-version');
+    const serverMemory = document.getElementById('server-memory');
+    const startStopBtn = document.getElementById('startStopBtn');
+    const viewWorldBtn = document.getElementById('viewWorldBtn');
+    const viewPluginBtn = document.getElementById('viewPluginBtn');
+    const viewConfigBtn = document.getElementById('viewConfigBtn');
+    const consoleOutput = document.getElementById('consoleOutput');
+    const consoleInput = document.getElementById('consoleInput');
+    const sendCommandBtn = document.getElementById('sendCommandBtn');
+
+    // Simulate starting and stopping the server
+    startStopBtn.addEventListener('click', function() {
+        if (serverStatus.innerText === "Running") {
+            stopServer();
+        } else {
+            startServer();
+        }
+    });
+
+    // Simulate starting the server
+    function startServer() {
+        serverStatus.innerText = "Running";
+        startStopBtn.innerText = "Stop Server";
+        alert("Server Started!");
+    }
+
+    // Simulate stopping the server
+    function stopServer() {
+        serverStatus.innerText = "Stopped";
+        startStopBtn.innerText = "Start Server";
+        alert("Server Stopped!");
+    }
+
+    // Simulate file management actions
+    viewWorldBtn.addEventListener('click', function() {
+        alert("Opening world files...");
+    });
+
+    viewPluginBtn.addEventListener('click', function() {
+        alert("Opening plugins folder...");
+    });
+
+    viewConfigBtn.addEventListener('click', function() {
+        alert("Opening server config...");
+    });
+
+    // Simulate console command input
+    sendCommandBtn.addEventListener('click', function() {
+        const command = consoleInput.value;
+        if (command) {
+            consoleOutput.value += `> ${command}\nServer responding: Command executed successfully.\n`;
+            consoleInput.value = '';
+        }
+    });
+});
