@@ -118,3 +118,40 @@ function getServerSoftwareUrl(serverType, version) {
         case 'paper':
             return `https://papermc.io/downloads/${version}.jar`;
         case 'forge':
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+
+const app = express();
+const PORT = 3000;
+
+app.use(express.json());
+app.use(express.static('public'));  // Serve the static files like HTML, CSS, JS
+
+// Simulated server actions (replace with actual server control logic)
+app.post('/start-server', (req, res) => {
+    console.log('Starting server...');
+    res.json({ status: 'Server started' });
+});
+
+app.post('/stop-server', (req, res) => {
+    console.log('Stopping server...');
+    res.json({ status: 'Server stopped' });
+});
+
+// Access server files (world, plugins, config)
+app.get('/files/:type', (req, res) => {
+    const type = req.params.type; // world, plugins, config
+
+    const dirPath = path.join(__dirname, 'server-files', type);
+    fs.readdir(dirPath, (err, files) => {
+        if (err) {
+            return res.status(500).json({ error: 'Unable to access the folder' });
+        }
+        res.json({ files });
+    });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
