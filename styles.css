@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('https://wallpapercave.com/wp/wp7461675.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+}
+
+header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.discord-button, .host-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #7289DA;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.host-button {
+    background: #4CAF50;
+}
+
+.discord-button:hover, .host-button:hover {
+    opacity: 0.8;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.feature-box {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.server-status {
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+  }
