@@ -152,3 +152,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const servers = [
+        { name: "Ansh_tag", id: "#5F15X0FucyPDDRi", type: "PaperMC 1.21.4", status: "offline" },
+        { name: "Empiresmp_1", id: "#T0n5P3P0wh7fhEso", type: "PaperMC 1.21.4", status: "offline" },
+        { name: "Luckblockraces", id: "#pM47sa79NNcWia5v", type: "PaperMC 1.21.4", status: "offline" }
+    ];
+
+    const serverList = document.getElementById("serverList");
+
+    servers.forEach(server => {
+        const serverDiv = document.createElement("div");
+        serverDiv.classList.add("server-card");
+        if (server.status === "online") {
+            serverDiv.classList.add("online");
+        }
+
+        serverDiv.innerHTML = `
+            <h3>${server.name}</h3>
+            <p>${server.id}</p>
+            <p>⚙️ ${server.type}</p>
+            <div class="server-status"></div>
+        `;
+
+        serverList.appendChild(serverDiv);
+    });
+});
